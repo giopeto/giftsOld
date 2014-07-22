@@ -1,0 +1,31 @@
+<div class = "form-wrap">
+
+	<p class = "form-title">Създайте потребител</p>
+					
+	<form class="login" ng-submit="createAccount()">
+		
+		<div class="alert alert-success col-md-12" id="alert-success"
+					ng-show="user.success">Успешно съсдадохте вашият профил. Можете да променяте вашата персонална информация по всяко време от таба {{user.name}}.</div>
+		
+		
+		
+		
+		<input type="text" placeholder="Потребителско име" ng-model = "user.name" name="userName">
+		<div ng-show = "user.createAccountNameError" class = "alert alert-danger" >{{user.createAccountNameError}}</div>
+		
+		<input type="text" placeholder = "Поща" ng-model = "user.email" name="email"> 
+	
+		<input type="password" placeholder="Парола" ng-model = "user.password" name="password">
+	
+		<input type="password" placeholder="Повторете паролата" ng-model = "user.retypePassword" name="retypePassword"> 
+		<div ng-show = "user.createAccountPasswordError" class = "alert alert-danger" >{{user.createAccountPasswordError}}</div>
+		
+		<div city-autocomplete city="city"></div>
+		
+		<input type="submit" value="Create account" class="btn btn-danger active btn-sm" />
+		<div ng-show = "user.createAccountNameExistError" class = "alert alert-danger" >{{user.createAccountNameExistError}}</div>
+		
+	</form>
+	
+</div>
+

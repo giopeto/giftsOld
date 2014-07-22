@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//WebContent/app/js/controllers/LoginController.js=UTF-8
+encoding//WebContent/app/js/controllers/ViewController.js=UTF-8
+encoding//WebContent/app/templates/createAccount.html=UTF-8
+encoding//WebContent/app/templates/giftMessage.html=UTF-8
+encoding//WebContent/app/templates/login.html=UTF-8
+encoding//WebContent/app/templates/makeGift.html=UTF-8
+encoding//WebContent/app/templates/myGifts.html=UTF-8
+encoding//WebContent/app/templates/userPage.html=UTF-8
+encoding//WebContent/app/templates/viewGift.html=UTF-8
+encoding//WebContent/app/templates/viewGifts.html=UTF-8
+encoding//WebContent/app/templates/viewMessages.html=UTF-8
+encoding//src/com/gifts/user/UserService.java=UTF-8

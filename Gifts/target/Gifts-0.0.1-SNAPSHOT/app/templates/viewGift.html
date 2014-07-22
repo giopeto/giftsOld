@@ -1,0 +1,35 @@
+<div ng-repeat="gift in viewGifts | filter:query | orderBy:orderProp" class="thumbnail">
+
+	<img id="preloader" src="img/gift-preloader.gif" alt="preloader" ng-show="!gift">
+
+	
+	<div class="row">
+		<div class="col-lg-4">
+			<a class="thumbnail"> 
+				<img src="data:image/jpeg;base64, {{gift.image}}" ng-show="gift.image" alt="Gifts Image">
+				<img src="img/gift_box.jpg" ng-show="!gift.image" alt="Gifts Image">
+			</a>
+			
+			<div class = "center-block">
+				<a href="#message/{{gift._id}}"  class="btn btn-danger active btn-lg center-block" ng-disabled="!user.id" ng-show = "{{gift.showMessageButton}}">
+					<span class="glyphicon glyphicon-envelope"></span> Съобщение до {{gift.userName}} »
+				</a>
+				
+				<div class="alert alert-danger " id="alert-success"
+					ng-show = "!user.id || gift.userIdError">Трябва да сте регистриран в системата за да изпратите съобщение</div>
+				
+			</div>
+			
+		</div>
+		
+		<div class="col-lg-8">
+			<h2>{{gift.name}}</h2>
+			<p>Описание: {{gift.description}}</p>
+			<p>Град: {{gift.cityName}}</p>
+			<p>Потребител: {{gift.userName}}</p>
+		</div>
+		<pre>Ako se pi6e 2-ri put ottuk trqbva da se updeitva message collectiona. DA SE OPRAVI</pre>
+		
+		
+	</div>
+</div>

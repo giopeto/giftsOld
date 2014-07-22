@@ -1,0 +1,37 @@
+<ul>
+	<li ng-repeat = "gift in viewGifts | filter:query | orderBy:orderProp" class="thumbnail">
+	<!-- <img id="preloader" src="img/gift-preloader.gif" alt="preloader"
+		ng-show="!gift"> -->
+	
+	
+		<div class = "row">
+		<div class="col-lg-4">
+			<a class="thumbnail"> 
+				<img src="data:image/jpeg;base64, {{gift.image}}" ng-show="gift.image" alt="Gifts Image">
+				<img src="img/gift_box.jpg" ng-show="!gift.image" alt="Gifts Image">
+			</a>
+		</div> 
+		
+		<div class="col-lg-8">
+			<h2>{{gift.name}}</h2>
+			<p>Описание: {{gift.description}}</p>
+			<p>Град: {{gift.cityName}}</p>
+			<p>Потребител: {{gift.userName}}</p>
+		</div>
+		
+		<!-- <h3>Съобщения</h3>
+			<ul>
+				<li ng-repeat = "message in gift.messages">
+					<div id = "message">
+						
+						{{message.messageAuthor}} write :
+							{{message.message}}
+						
+					</div>
+				</li>
+			</ul> -->
+		
+		
+		
+	</li>
+</ul>

@@ -1,0 +1,28 @@
+<div class = "form-wrap">
+
+	<p class = "form-title">Create account</p>
+					
+	<form class="login" ng-submit="createAccount()">
+		
+		<div class="alert alert-success col-md-12" id="alert-success"
+					ng-show="user.success">Successfully create your account. You can edit your personal info from last tab in navigation at any time</div>
+		
+		<input type="text" placeholder="User name" ng-model = "user.name" name="userName">
+		<div ng-show = "user.createAccountNameError" class = "alert alert-danger" >{{user.createAccountNameError}}</div>
+		
+		<input type="text" placeholder = "Email address" ng-model = "user.email" name="email"> 
+	
+		<input type="password" placeholder="Password" ng-model = "user.password" name="password">
+	
+		<input type="password" placeholder="Password again" ng-model = "user.retypePassword" name="retypePassword"> 
+		<div ng-show = "user.createAccountPasswordError" class = "alert alert-danger" >{{user.createAccountPasswordError}}</div>
+		
+		<div city-autocomplete city="city"></div>
+		
+		<input type="submit" value="Create account" class="btn btn-danger active btn-sm" />
+		<div ng-show = "user.createAccountNameExistError" class = "alert alert-danger" >{{user.createAccountNameExistError}}</div>
+		
+	</form>
+	
+</div>
+

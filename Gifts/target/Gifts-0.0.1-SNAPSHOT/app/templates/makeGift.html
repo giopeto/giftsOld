@@ -1,0 +1,43 @@
+<form class="form-horizontal" ng-submit="saveGiftInfo()">
+	<div class="form-group">
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="name" name="name" placeholder="Име" ng-model = "gift.name">
+			
+			<span class="alert alert-danger col-md-12" ng-show = "gift.nameError">{{gift.nameError}}</span>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-10">
+			<textarea class="form-control" id="description" rows="3" id = "description" name = "description" placeholder="Описание" ng-model = "gift.description"></textarea>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-10">
+			<div city-autocomplete city="city"></div>
+		</div>
+		
+		<span class="alert alert-danger col-md-12" ng-show = "gift.cityError">{{gift.cityError}}</span>
+	</div>
+</form>
+
+<div ng-controller = "uploadFileController">
+<form enctype="multipart/form-data" class="form-horizontal">
+
+	<div class="form-group">
+		<div class="col-sm-10">
+		    <input type="file" file-model="myFile" class="btn btn-danger active btn-sm"/>
+		    
+		   <div class="alert alert-danger " id="alert-success"
+					ng-show = "!user.id || gift.userIdError">Трябва да сте регистриран в системата за да направите подарък</div>
+		    
+		    <button ng-click="uploadFile()" class="btn btn-danger active btn-lg" ng-disabled="!user.id"><span class="glyphicon glyphicon-gift"></span> Направи подарък</button>
+			
+		</div>
+	</div>
+    </form>
+</div>
+
+
+

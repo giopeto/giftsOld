@@ -1,0 +1,43 @@
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxx
+<pre>
+{{viewMessages.messages}} | json
+</pre>
+
+
+
+<ul>
+	<li ng-repeat="giftInfo in viewMessages">
+		
+			{{giftInfo["message_" + {{giftInfo._id}}].name}}
+			
+<div class="col-xs-6 col-sm-2">
+	<a class="thumbnail"> 
+		<img src="data:image/jpeg;base64, {{giftInfo["message_" + {{giftInfo._id}}]image}}" ng-show="giftInfo["message_" + {{giftInfo._id}}]image" alt="Gifts Image">
+		<img src="img/gift_box.jpg" ng-show="!giftInfo["message_" + {{giftInfo._id}}]image" alt="Gifts Image">
+	</a>
+</div>
+			
+	<!-- giftInfo["message_" + {{giftInfo._id}}]image		
+
+message_539811e903ce4bc3933e09ab -->
+
+	<!-- <ul>
+		<li ng-repeat="message in giftInfo.messages">
+			<div id="message">{{message.messageAuthor}} write :
+				{{message.message}}</div>
+		</li>
+	</ul> -->
+
+	</li>
+</ul>
+
+
+
+
+<!-- <textarea class="form-control" rows="5" id = "message" name = "message" 
+	placeholder="Message to {{viewMessageGiftsInfo.name}}" ng-model = "messages.message"></textarea>	
+<br />
+<button ng-click = "saveMessage(viewMessageGiftsInfo._id);" class="btn btn-danger active btn-lg">Send</button> -->

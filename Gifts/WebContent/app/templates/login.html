@@ -1,0 +1,18 @@
+<div class = "form-wrap">
+	<p class = "form-title">Вход в системата</p>
+	<form class="login" ng-submit = "login()">
+		
+		<input type = "text" placeholder = "Потребителско име" ng-model = "user.name"/> 
+		<div ng-show = "user.nameError" class = "alert alert-danger" >{{user.nameError}}</div>
+		
+		<input type = "password" placeholder = "Парола" ng-model = "user.password"/>
+		<div ng-show = "user.passwordError" class = "alert alert-danger" >{{user.passwordError}}</div>
+		
+		<input type = "submit" value = "Влизане" class = "btn btn-danger active btn-sm" />
+		
+		<div ng-show = "user.registerMessage" class="alert alert-info">
+			<a href = "#register">{{user.registerMessage}}</a>
+		</div>
+	
+	</form>
+</div>

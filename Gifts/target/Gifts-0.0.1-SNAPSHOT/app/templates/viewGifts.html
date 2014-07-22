@@ -1,0 +1,45 @@
+<!-- tuka e css box -a <br/>
+
+.box  {
+	background: red;
+	background: rgba(255, 255, 255, 0.9);
+	margin-bottom: 20px;
+  padding: 30px 15px;
+} -->
+
+<!-- <pre>
+{{viewGifts}}
+</pre>
+ -->
+
+<ul>
+	<li ng-repeat="gift in viewGifts | filter:query | orderBy:orderProp" class="thumbnail">
+	<img id="preloader" src="img/gift-preloader.gif" alt="preloader" ng-show="!gift">
+	
+		<div class = "row">
+        	<div class="col-lg-4">
+		
+		
+				
+					<a href="#viewGift/{{gift._id}}" class="thumbnail"> 
+						<img src="data:image/jpeg;base64, {{gift.image}}" ng-show="gift.image" alt="Gifts Image">
+						<img src="img/gift_box.jpg" ng-show="!gift.image" alt="Gifts Image">
+					</a>
+					<a href="#viewGift/{{gift._id}}"  class="btn btn-danger active btn-lg center col-sm-8">Виж повече</a>
+				<br/>
+			</div>
+		
+			<div class="col-lg-8">
+				<h2>{{gift.name}}</h2>
+				<p>Описание: {{gift.description}}</p>
+				
+			
+				<p>Град: {{gift.cityName}}</p>
+				<p>Потребител: {{gift.userName}}</p>
+				
+			</div>
+			
+			
+		</div>
+	</li>
+</ul>

@@ -1,0 +1,53 @@
+<h2 class="address-bar">Съобщения</h2>
+
+<!-- <pre>{{viewMessages | json}}</pre> -->
+
+<ul>
+	<li ng-repeat="giftInfo in viewMessages" class="thumbnail">
+		<div class="row">
+			<!-- <pre>{{giftInfo | json}}</pre> -->
+			<h2 class="address-bar">Съобщение за {{giftInfo.name}}</h2>
+			<div class="col-lg-4">
+				<a class="thumbnail"> 
+					<img src="data:image/jpeg;base64, {{giftInfo.image}}" ng-show="giftInfo.image" alt="Gifts Image"> 
+					<img src="img/gift_box.jpg" ng-show="!giftInfo.image" alt="Gifts Image">
+				</a>
+				
+				<div class = "text-center">
+					<p>Описание: {{giftInfo.description}}</p>
+					<p>Град: {{giftInfo.cityName}}</p>
+					<p>Потребител: {{giftInfo.userName}}</p>
+				</div>
+				
+			</div>
+			<div class="col-lg-8">
+
+				<ul class="list-unstyled">
+					<li ng-repeat="message in giftInfo.messages" ng-class="{'alert alert-danger': message.unread, 'alert alert-success': !message.unread}">
+						<div>
+							 На {{message.messageCreatedDate}} потребител {{message.author}} написа :<br />
+							{{message.message}}
+						</div>
+					</li>
+
+
+					<li><textarea class="form-control" rows="5"
+							placeholder="Напишете вашето съобщение"
+							ng-model="messages.newMessage[giftInfo._id]"></textarea> <br />
+						<button
+							ng-click="saveMessage({'giftId': giftInfo.giftId, 'toId': giftInfo.toId, 'fromId': giftInfo.fromId, 'messageId': giftInfo._id});"
+							class="btn btn-danger active btn-lg center-block"><span class="glyphicon glyphicon-send"></span> Изпрати</button>
+							
+			</div>
+	</li>
+
+
+</ul>
+</div>
+</div>
+</li>
+</ul>
+
+
+
+

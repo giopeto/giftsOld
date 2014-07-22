@@ -1,0 +1,19 @@
+<div class = "form-wrap">
+	<p class = "form-title">Профил на {{user.name}}</p>		
+	<form class="login" ng-submit="editAccount()">
+	
+		<div ng-show = "user.createAccountNameError" class = "alert alert-danger" >{{user.createAccountNameError}}</div>
+		
+		<input type="text" placeholder = "Е-мейл адрес" ng-model = "user.email" name="email"> 
+	
+		<input type="password" placeholder="Парола" ng-model = "user.password" name="password">
+	
+		<input type="password" placeholder="Повторете паролата" ng-model = "user.retypePassword" name="retypePassword"> 
+		<div ng-show = "user.createAccountPasswordError" class = "alert alert-danger" >{{user.createAccountPasswordError}}</div>
+		
+		<input type="submit" value="Запази промените" class="btn btn-danger active btn-sm" />
+		<div ng-show = "user.createAccountNameExistError" class = "alert alert-danger" >{{user.createAccountNameExistError}}</div>
+	</form>
+	
+</div>
+

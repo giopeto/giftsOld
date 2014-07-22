@@ -1,0 +1,21 @@
+<!-- Write message -->
+<h3>Съобщение относно<i> {{viewMessageGiftsInfo.name}} </i></h3>
+
+<div class="row">
+	<div class="col-lg-4">
+		
+			<a class="thumbnail"> 
+				<img src="data:image/jpeg;base64, {{viewMessageGiftsInfo.image}}" ng-show="viewMessageGiftsInfo.image" alt="Gifts Image">
+				<img src="img/gift_box.jpg" ng-show="!viewMessageGiftsInfo.image" alt="Gifts Image">
+			</a>
+		
+	</div>
+
+	<div class="col-lg-8">
+	<textarea class="form-control" rows="6" id = "message" name = "message" 
+		placeholder="Съобщение до {{viewMessageGiftsInfo.userName}}" ng-model = "messages.message"></textarea>	
+	<br />
+	<button ng-click = "saveMessage({'giftId': viewMessageGiftsInfo._id, 'toId': viewMessageGiftsInfo.userId});" class="btn btn-danger active btn-lg center-block"><span class="glyphicon glyphicon-send"></span> Изпрати</button>
+	</div>
+</div>
+
